@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package exercise;
 
 import exercise.Person.Gender;
@@ -11,16 +7,10 @@ import java.time.Year;
 import java.util.Collection;
 import java.util.HashSet;
 
-/**
- *
- * @author Jacek
- */
 public class People {
 
     Collection<Person> people = new HashSet<>();
 
-    ;
-    
     public People() {
 
     }
@@ -45,7 +35,7 @@ public class People {
     public void print() {
         System.out.println(this);
     }
-
+    
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
@@ -54,7 +44,7 @@ public class People {
         }
         return builder.toString();
     }
-
+    
     private int randomInt(int min, int max) {
         int range = max - min + 1;
         return (int) (Math.random() * range) + min;
@@ -114,5 +104,5 @@ public class People {
         name = name.replaceAll("[\" \"]", "").toLowerCase();
         return name + "@provider.com";
     }
-
+    
 }
