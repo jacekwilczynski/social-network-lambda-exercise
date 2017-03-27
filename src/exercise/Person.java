@@ -96,5 +96,9 @@ public class Person {
         return String.format("%30s (%s)   %s   %s", name, gender.toString().charAt(0), birthday, emailAddress);
     }
     
+    public void print() {
+        System.out.println(this);
+    }
+    
     
 }
