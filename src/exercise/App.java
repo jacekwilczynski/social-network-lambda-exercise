@@ -5,8 +5,6 @@
  */
 package exercise;
 
-import exercise.People;
-
 /**
  *
  * @author Jacek
