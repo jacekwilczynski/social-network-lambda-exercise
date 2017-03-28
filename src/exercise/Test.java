@@ -6,8 +6,11 @@ public class Test {
 
         People people = new People(20);
 
-        // Print people under 21
-        people.process(p -> p.getAge() < 21, p -> p.print());
+        // Clear e-mails of people under 21
+        people.process(p -> p.getAge() < 21, p -> p.setEmailAddress(""));
+        
+        // Print all people
+        people.print();
 
     }
 
