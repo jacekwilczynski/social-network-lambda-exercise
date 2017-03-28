@@ -9,19 +9,13 @@ public class Test {
         People people = new People(20);
 
         // Count males
-        int sum = people.sum(p -> {
-            if (p.getGender() == Gender.MALE) {
-                return 1;
-            } else {
-                return 0;
-            }
-        });
+        int sum = people.sum(p -> p.getAge());
         
         // Print all
         people.print();
         
         // Print sum
-        System.out.println("Males: " + sum);
+        System.out.println("Sum of life spans: " + sum);
         
     }
 
