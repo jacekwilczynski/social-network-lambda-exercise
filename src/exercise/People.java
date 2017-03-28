@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import java.time.Year;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.function.Predicate;
 
 public class People {
     
@@ -36,7 +37,7 @@ public class People {
         System.out.println(this);
     }
     
-    public void print(Person.Tester tester) {
+    public void print(Predicate<Person> tester) {
         for (Person person : people) {
             if (tester.test(person)) {
                 person.print();

@@ -1,7 +1,7 @@
 
 package exercise;
 
-import static exercise.Person.Gender.MALE;
+import exercise.Person.Gender;
 
 public class Test {
     
@@ -9,8 +9,9 @@ public class Test {
         
         People people = new People(20);
         
-        // Print only males
-        people.print(p -> p.getGender() == MALE);
+        // Print pensioners
+        people.print(p -> (p.getGender() == Gender.MALE && p.getAge() >= 65) ||
+                (p.getGender() == Gender.FEMALE && p.getAge() >= 60));
        
     }
     

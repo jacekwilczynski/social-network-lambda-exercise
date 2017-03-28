@@ -10,10 +10,6 @@ import java.util.Objects;
  */
 public class Person {
     
-    public static interface Tester {
-        public boolean test(Person p);
-    }
-
     private String name;
     private LocalDate birthday;
     private Gender gender;
