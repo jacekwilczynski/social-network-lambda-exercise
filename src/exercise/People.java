@@ -8,7 +8,7 @@ import java.util.Collection;
 import java.util.HashSet;
 
 public class People {
-
+    
     Collection<Person> people = new HashSet<>();
 
     public People() {
@@ -36,6 +36,14 @@ public class People {
         System.out.println(this);
     }
     
+    public void print(Person.Tester tester) {
+        for (Person person : people) {
+            if (tester.test(person)) {
+                person.print();
+            }
+        }
+    }
+    
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
@@ -43,16 +51,6 @@ public class People {
             builder.append(person).append("\n");
         }
         return builder.toString();
-    }
-    
-    public void printPersonsWithinAgeRange(int min, int max) {
-        int age;
-        for (Person person : people) {
-            age = person.getAge();
-            if (age >= min && age <= max) {
-                person.print();
-            }
-        }
     }
     
     private int randomInt(int min, int max) {
