@@ -7,7 +7,7 @@ public class Test {
         
         People people = new People(20);
         
-        people.print();
+        people.printPersonsOlderThan(40);
        
     }
     
