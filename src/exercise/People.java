@@ -7,13 +7,10 @@ import java.time.Year;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Predicate;
 
 public class People implements Iterable<Person> {
     
-    Collection<Person> people = new HashSet<>();
+    public Collection<Person> people = new HashSet<>();
 
     public People() {
 
@@ -38,28 +35,6 @@ public class People implements Iterable<Person> {
 
     public void print() {
         System.out.println(this);
-    }
-    
-    public void print(Predicate<Person> tester) {
-        for (Person person : people) {
-            if (tester.test(person)) {
-                person.print();
-            }
-        }
-    }
-    
-    public void process(Consumer<Person> block) {
-        for (Person person : people) {
-            block.accept(person);
-        }
-    }
-    
-    public int sum(Function<Person, Integer> function) {
-        int result = 0;
-        for (Person person : people) {
-            result += function.apply(person);
-        }
-        return result;
     }
     
     @Override
