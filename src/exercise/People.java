@@ -47,20 +47,9 @@ public class People {
         }
     }
     
-    public void process(Predicate<Person> tester, Consumer<Person> block) {
+    public void process(Consumer<Person> block) {
         for (Person person : people) {
-            if (tester.test(person)) {
-                block.accept(person);
-            }
-        }
-    }
-    
-    public void processWithFunction(Predicate<Person> tester, Function<Person, String> mapper, Consumer<String> block) {
-        for (Person person : people) {
-            if (tester.test(person)) {
-                String data = mapper.apply(person);
-                block.accept(data);
-            }
+            block.accept(person);
         }
     }
     

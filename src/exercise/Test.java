@@ -9,14 +9,17 @@ public class Test {
         People people = new People(20);
 
         // For people of age 18+, print male e-mails in lower case and female in upper case
-        people.processWithFunction(p -> p.getAge() >= 18, p -> {
-            String email = p.getEmailAddress();
-            if (p.getGender() == Gender.FEMALE) {
-                return email.toUpperCase();
-            } else {
-                return email.toLowerCase();
+        people.process(p -> {
+            if (p.getAge() >= 18) {
+                String email = p.getEmailAddress();
+                if (p.getGender() == Gender.FEMALE) {
+                    email = email.toUpperCase();
+                } else {
+                    email = email.toLowerCase();
+                }
+                System.out.println(email);
             }
-        }, email -> System.out.println(email));
+        });
         
     }
 
