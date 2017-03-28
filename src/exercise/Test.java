@@ -8,18 +8,20 @@ public class Test {
 
         People people = new People(20);
 
-        // For people of age 18+, print male e-mails in lower case and female in upper case
-        people.process(p -> {
-            if (p.getAge() >= 18) {
-                String email = p.getEmailAddress();
-                if (p.getGender() == Gender.FEMALE) {
-                    email = email.toUpperCase();
-                } else {
-                    email = email.toLowerCase();
-                }
-                System.out.println(email);
+        // Count males
+        int sum = people.sum(p -> {
+            if (p.getGender() == Gender.MALE) {
+                return 1;
+            } else {
+                return 0;
             }
         });
+        
+        // Print all
+        people.print();
+        
+        // Print sum
+        System.out.println("Males: " + sum);
         
     }
 

@@ -53,6 +53,14 @@ public class People {
         }
     }
     
+    public int sum(Function<Person, Integer> function) {
+        int result = 0;
+        for (Person person : people) {
+            result += function.apply(person);
+        }
+        return result;
+    }
+    
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
