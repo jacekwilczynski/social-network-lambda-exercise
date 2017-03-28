@@ -1,7 +1,8 @@
 
 package exercise;
 
-import exercise.Person.Gender;
+import static exercise.Person.Gender.MALE;
+import exercise.Person.Tester;
 
 public class Test {
     
@@ -9,15 +10,13 @@ public class Test {
         
         People people = new People(20);
         
-        class Tester implements Person.Tester {
+        people.print(new Tester() {
             @Override
             public boolean test(Person p) {
-                // Select females aged 18+
-                return p.getAge() >= 18 && p.getGender() == Gender.FEMALE;
+                // Select only boys under 18
+                return p.getGender() == MALE && p.getAge() < 18;
             }
-        }
-        
-        people.print(new Tester());
+        });
        
     }
     
