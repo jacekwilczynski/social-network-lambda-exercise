@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import java.time.Year;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 public class People {
@@ -41,6 +42,14 @@ public class People {
         for (Person person : people) {
             if (tester.test(person)) {
                 person.print();
+            }
+        }
+    }
+    
+    public void process(Predicate<Person> tester, Consumer<Person> block) {
+        for (Person person : people) {
+            if (tester.test(person)) {
+                block.accept(person);
             }
         }
     }
