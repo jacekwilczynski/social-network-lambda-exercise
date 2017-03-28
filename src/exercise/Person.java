@@ -9,6 +9,10 @@ import java.util.Objects;
  * @author Jacek
  */
 public class Person {
+    
+    public static interface Tester {
+        public boolean test(Person p);
+    }
 
     private String name;
     private LocalDate birthday;

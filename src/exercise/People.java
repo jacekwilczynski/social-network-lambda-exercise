@@ -8,7 +8,7 @@ import java.util.Collection;
 import java.util.HashSet;
 
 public class People {
-
+    
     Collection<Person> people = new HashSet<>();
 
     public People() {
@@ -34,6 +34,14 @@ public class People {
 
     public void print() {
         System.out.println(this);
+    }
+    
+    public void print(Person.Tester tester) {
+        for (Person person : people) {
+            if (tester.test(person)) {
+                person.print();
+            }
+        }
     }
     
     @Override
