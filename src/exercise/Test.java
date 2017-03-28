@@ -6,9 +6,9 @@ public class Test {
 
         People people = new People(20);
 
-        // Print emails of people under 21
-        people.process(p -> p.getAge() < 21, p -> System.out.println(p.getEmailAddress()));
-        
+        // Print emails of people between 7 and 26
+        people.processWithFunction(p -> p.getAge() >= 7 && p.getAge() <= 26,
+                p -> p.getEmailAddress(), email -> System.out.println(email));
 
     }
 

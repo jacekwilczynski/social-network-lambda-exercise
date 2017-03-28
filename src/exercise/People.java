@@ -7,6 +7,7 @@ import java.time.Year;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 public class People {
@@ -50,6 +51,15 @@ public class People {
         for (Person person : people) {
             if (tester.test(person)) {
                 block.accept(person);
+            }
+        }
+    }
+    
+    public void processWithFunction(Predicate<Person> tester, Function<Person, String> mapper, Consumer<String> block) {
+        for (Person person : people) {
+            if (tester.test(person)) {
+                String data = mapper.apply(person);
+                block.accept(data);
             }
         }
     }
