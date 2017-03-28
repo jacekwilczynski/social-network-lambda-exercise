@@ -45,6 +45,14 @@ public class People {
         return builder.toString();
     }
     
+    public void printPersonsOlderThan(int age) {
+        for (Person person : people) {
+            if (person.getAge() >= age) {
+                person.print();
+            }
+        }
+    }
+    
     private int randomInt(int min, int max) {
         int range = max - min + 1;
         return (int) (Math.random() * range) + min;
