@@ -6,11 +6,12 @@ import java.time.LocalDate;
 import java.time.Year;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
-public class People {
+public class People implements Iterable<Person> {
     
     Collection<Person> people = new HashSet<>();
 
@@ -68,6 +69,11 @@ public class People {
             builder.append(person).append("\n");
         }
         return builder.toString();
+    }
+
+    @Override
+    public Iterator<Person> iterator() {
+        return people.iterator();
     }
     
     private int randomInt(int min, int max) {
