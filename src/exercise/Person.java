@@ -89,7 +89,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return String.format("%30s (%s)   %s   %s", name, gender.toString().charAt(0), birthday, emailAddress);
+        return String.format("%30s (%s)   %3s   %s", name, gender.toString().charAt(0), getAge(), emailAddress);
     }
     
     public void print() {
