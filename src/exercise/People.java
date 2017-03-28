@@ -45,9 +45,11 @@ public class People {
         return builder.toString();
     }
     
-    public void printPersonsOlderThan(int age) {
+    public void printPersonsWithinAgeRange(int min, int max) {
+        int age;
         for (Person person : people) {
-            if (person.getAge() >= age) {
+            age = person.getAge();
+            if (age >= min && age <= max) {
                 person.print();
             }
         }

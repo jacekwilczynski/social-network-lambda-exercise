@@ -7,7 +7,7 @@ public class Test {
         
         People people = new People(20);
         
-        people.printPersonsOlderThan(40);
+        people.printPersonsWithinAgeRange(10, 30);
        
     }
     
